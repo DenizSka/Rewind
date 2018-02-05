@@ -1,0 +1,32 @@
+ <% include ../partials/header %>
+
+ <div class='apilist'>
+
+  <h1>TOP 10 SONGS ON YOUR BDAY </h1>
+
+  <a href="/playlist/new">Add song</a>
+  <a href= '/'> New Search</a>
+  <a href= '/playlist'> See your List</a>
+
+  <div class='apilista'>
+
+    <a href='<%= firstVideo.link %>' target="_blank"> Listen: <%= firstVideo.title %></a>
+    <% playlist.forEach(song => { %>
+
+  </div>
+
+</div>
+
+<div class='apilistsongs'>
+<hr>
+
+  <h2>Music_Title: <%= song.song_name %></h2>
+  <h2> Artist: <%= song.display_artist %></h2>
+  <h2> Rank: <%= song.rank %></h2>
+
+</div>
+
+  <% }); %>
+
+
+  <% include ../partials/footer %>

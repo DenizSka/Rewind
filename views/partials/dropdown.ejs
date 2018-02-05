@@ -1,0 +1,7 @@
+  <label for="genre_id"> Genre
+    <select name="genre_id" type="text">
+    <% genres.forEach(genre => {%>
+      <option value="<%=genre.id%>"><%= genre.genre %></option>
+    <% }); %>
+    </select>
+  </label></br>

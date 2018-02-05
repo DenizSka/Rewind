@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+
+<div class= "new-songtolist">
+
+  <h1>Edit This Song </h1>
+
+  <form method='POST' action='/playlist/<%= song.id %>?_method=PUT'>
+    <input name="id" type="hidden" value="<%= song.id %>">
+    <input name="music_title" type="text" value="<%= song.music_title %>">
+    <input name="artist" type="text" value="<%= song.artist %>" />
+    <input name="year" type="text" value="<%= song.year %>" />
+    <input type='submit' value='Edit!' />
+  </form>
+
+</div>
+
+<% include ../partials/footer %>

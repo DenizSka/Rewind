@@ -1,0 +1,25 @@
+ <% include ../partials/header %>
+
+ <div class='song-list'>
+  <h1>Your playlist </h1>
+
+  <div class = 'links-to-song'>
+    <a href="/playlist/new">Add new song</a>
+<!--   <form class="contained" method="GET" action= '/playlist/bydate'>
+    <input class = "submit" type="submit" value="Back to top results"> -->
+    <a href= '/playlist/bydate/'> Back to top results</a>
+  </div>
+<!-- </form> -->
+  <% playlist.forEach(song => { %>
+
+  <div class='song-listeach'>
+    <h2>Id: <%= song.id %></h2>
+    <h3>Music Title: </h3>
+    <p><%= song.music_title %></p>
+    <a href="/playlist/<%= song.id %>"> Learn More </a><br>
+    <hr>
+  </div>
+  <% }); %>
+</div>
+
+<% include ../partials/footer %>

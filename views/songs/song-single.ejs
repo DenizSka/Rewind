@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+
+<div class='songssingle'>
+
+  <h1>Single Song</h1>
+  <a href='/playlist/edit/<%= song.id %>'> Edit this song </a><br>
+  <a href='/playlist/'>Back to your playlist</a>
+
+  <div class ='songssinglelist'>
+    <h2> Music_Title: <%= song.music_title %></h2>
+    <h2> Artist: <%= song.artist %></h2>
+    <h2> Year: <%= song.year %></h2>
+    <h2> Genre: <%= song.genre %></h2>
+<!--   <h2> ID: <%= song.genre_id %></h2> -->
+    <form action="/playlist/<%= song.id %>?_method=DELETE" method="POST">
+      <input type="Submit" value="Delete"/>
+    </form>
+  </div>
+</div>
+
+<% include ../partials/footer %>
+
