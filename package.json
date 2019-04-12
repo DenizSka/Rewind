@@ -28,7 +28,10 @@
   "author": "Deniz Skantz",
   "license": "ISC",
   "dependencies": {
+    "billboard-top-100": "^2.4.4",
     "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.3",
+    "date-format": "^2.0.0",
     "debugging": "^1.0.1",
     "dotenv": "^4.0.0",
     "ejs": "^2.5.7",
