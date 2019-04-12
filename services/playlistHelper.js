@@ -72,23 +72,24 @@ module.exports = {
         let data = chart.songs;
         let newChart = data.slice(0, 10);
         console.log(newChart);
-        // res.locals.playlist = chart.songs.rank;
+        res.locals.playlist = newChart;
         // console.log(responseJSON.songs[0]);
         // Got help from developer friend to implement the YouTube info on the url below:
         // https://www.npmjs.com/package/youtube-search
         const songName = newChart[0].title;
         // const artist = chart.songs[0].artist;
-        const opts = {
-          maxResults: 10,
-          // key: process.env.API_KEY,
-        };
+        // const opts = {
+        //   maxResults: 10,
+        //   key: process.env.API_KEY,
+        // };
 
-        search(songName, opts, (err, results) => {
-          if (err) return console.log(err);
-          // console.log('youtube songs', results[0]);
-          res.locals.firstVideo = results[0];
-          next();
-        });
+        // search(songName, opts, (err, results) => {
+        //   if (err) return console.log(err);
+        //   // console.log('youtube songs', results[0]);
+        //   console.log('youtube songs', results);
+        //   res.locals.firstVideo = results;
+        //   next();
+        // });
       }).catch((err) => {
         console.log(err);
         // in case there's an error in the API call, we don't want to just
