@@ -10,24 +10,21 @@
 
   <div class='apilista'>
 
-    <a href='<%= firstVideo.link %>' target="_blank"> Listen: <%= firstVideo.title %></a>
-    <% playlist.forEach(song => { %>
+
+<% playlist.forEach(song => { %>
 
   </div>
-
 </div>
-
 <div class='apilistsongs'>
 <hr>
 
   <h2>Music_Title: <%= song.title %></h2>
   <h2> Artist: <%= song.artist %></h2>
   <h2> Rank: <%= song.rank %></h2>
-  <h2> Cover: <%= song.cover %></h2>
-
+  <h2> Cover:</h2>
+  <img src="<%= song.cover %>" alt="Song Cover" height="100" width="100">
+<% }); %>
 </div>
-
-  <% }); %>
 
 
   <% include ../partials/footer %>

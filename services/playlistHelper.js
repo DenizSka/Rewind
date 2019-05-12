@@ -22,7 +22,8 @@ module.exports = {
     // console.log('inside of getYourSong function');
     let date = `${req.query.year}-${req.query.month}-${req.query.day}`;
     // date = date.toString();
-    let actualDate = moment(date).format('YYYY-MM-DD');
+    console.log(`This is actual date ${date}`);
+    let actualDate = moment(new Date(date)).format('YYYY-MM-DD');
     console.log(`This is actual date ${actualDate}`);
     // const weekday = actualDate.weekday();
     // const weekdayForSaturday = 6;
@@ -59,35 +60,32 @@ module.exports = {
 
 
   getAsyncData(actualDate)
-      // .then((chart) => {
-      //   console.log(chart);
-      //   // console.log(req.query.year);
-      //   // let data = JSON.parse(chart);
-      //   // console.log(data);
-      //   // let newChart = data.slice(1, 10);
-      // })
       .then((chart) => {
         // adding properties to res.locals
-        // res.send(responseJSON);
         let data = chart.songs;
         let newChart = data.slice(0, 10);
         console.log(newChart);
+        // res.send(newChart);
         res.locals.playlist = newChart;
+        let covers = newChart.map(item => item = item.cover);
+        res.locals.covers = covers;
+        // const chartObject = Object.assign({}, ...newChart);
+        console.log(covers);
+
         // console.log(responseJSON.songs[0]);
         // Got help from developer friend to implement the YouTube info on the url below:
         // https://www.npmjs.com/package/youtube-search
         const songName = newChart[0].title;
-        // const artist = chart.songs[0].artist;
+        next()
         // const opts = {
         //   maxResults: 10,
         //   key: process.env.API_KEY,
         // };
-
         // search(songName, opts, (err, results) => {
         //   if (err) return console.log(err);
         //   // console.log('youtube songs', results[0]);
         //   console.log('youtube songs', results);
-        //   res.locals.firstVideo = results;
+        //   res.locals.firstVideo = results[0];
         //   next();
         // });
       }).catch((err) => {
@@ -98,4 +96,4 @@ module.exports = {
         next(err);
       });
   }
-};
+}
