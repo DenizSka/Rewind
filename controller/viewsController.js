@@ -18,8 +18,7 @@ module.exports = {
     // console.log('inside of showSongs function');
     res.render('songs/song-index', {
       playlist: res.locals.playlist,
-      cover: res.locals.covers,
-      // firstVideo: res.locals.firstVideo,
+      firstVideo: res.locals.firstVideo,
     });
   },
 
