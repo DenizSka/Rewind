@@ -2,27 +2,29 @@
 
  <div class='apilist'>
 
-  <h1>TOP 10 SONGS ON YOUR BDAY </h1>
+  <h1 class='bday'>TOP 10 SONGS </br>
+  ON YOUR BDAY </h1>
 
-  <a href="/playlist/new">Add song to your list</a>
+  <a href="/playlist/new">Add to your list</a>
   <a href= '/'> New Search</a>
   <a href= '/playlist'> See your List</a>
 
   <div class='apilista'>
- <a href='<%= firstVideo.link %>' target="_blank"> Listen: <%= firstVideo.title %></a>
-
-<% playlist.forEach(song => { %>
-
+   <a href='<%= firstVideo.link %>' target="_blank"> Listen: <%= firstVideo.title %></a>
   </div>
-</div>
-<div class='apilistsongs'>
-<hr>
-  <h2> Rank: <%= song.rank %></h2>
-  <h2> Music_Title: <%= song.title %></h2>
-  <h2> Artist: <%= song.artist %></h2>
-  <h2> Cover:</h2>
-  <img src="<%= song.cover %>" alt="Song Cover" height="75" width="75">
-<% }); %>
+  <div class='listelist'>
+    <% playlist.forEach(song => { %>
+  <div class='apilistsongs'>
+  <hr>
+  <div class='rank'>  <div class= 'anotherrank'><%= song.rank %> </div></div>
+  <div class='imageouter'>
+  <div class='imagediv'><img src="<%= song.cover %>" alt="Song Cover" height="75" width="75"></div></div>
+    <h2> Music_Title: <%= song.title %></h2>
+    <h2> Artist: <%= song.artist %></h2>
+    <h2> Cover:</h2>
+  <% }); %>
+  </div>
+  </div>
 </div>
 
 

@@ -82,11 +82,43 @@ input[type='submit'] {
   text-align: center;
 }
 
+.listelist{
+  width: 676px;
+  text-align: center;
+}
+
+.rank{
+  width: 61px;
+  padding-top: 17px;
+}
+
+.anotherrank{
+  text-align: center;
+    font-size: 27px;
+    line-height: 27px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.imageouter{
+  position: relative;
+    width: 72px;
+}
+.imagediv{
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity .1s ease-in;
+  transition: opacity .1s ease-in;
+}
+
 .apilistsongs {
   font-weight: 100;
   font-family: Walfork,Walsheim,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 1.2rem;
   line-height: 1.5;
+  text-align: center;
+  padding: 5px 0;
 }
 
 .apilistsongs h2 {
