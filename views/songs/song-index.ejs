@@ -1,6 +1,6 @@
  <% include ../partials/header %>
 
- <div class='apilist'>
+ <div class='chart'>
 
   <h1 class='bday'>TOP 10 SONGS </br>
   ON YOUR BDAY </h1>
@@ -9,21 +9,23 @@
   <a href= '/'> New Search</a>
   <a href= '/playlist'> See your List</a>
 
-  <div class='apilista'>
+  <div class='chart-list outer-list'>
    <a href='<%= firstVideo.link %>' target="_blank"> Listen: <%= firstVideo.title %></a>
   </div>
-  <div class='listelist'>
+  <div class='chart-list-item'>
     <% playlist.forEach(song => { %>
-  <div class='apilistsongs'>
-  <hr>
-  <div class='rank'>  <div class= 'anotherrank'><%= song.rank %> </div></div>
-  <div class='imageouter'>
-  <div class='imagediv'><img src="<%= song.cover %>" alt="Song Cover" height="75" width="75"></div></div>
-    <h2> Music_Title: <%= song.title %></h2>
-    <h2> Artist: <%= song.artist %></h2>
-    <h2> Cover:</h2>
-  <% }); %>
+  <div class='chart-list-item__rows'>
+    <div class='chart-list-item__position'>
+      <div class= 'chart-list-item__rank'><%= song.rank %> </div>
+    </div>
+    <div class='chart-list-item__image-wrapper'>
+    <div class='chart-list-item__image'><img src="<%= song.cover %>" alt="Song Cover" height="75" width="75"></div></div>
+    <div class='chart-list-item__text-wrapper'>
+      <div class='chart-list-item__title'><%= song.title %></div>
+      <div class='chart-list-item__artist'> by <%= song.artist %></div>
+    </div>
   </div>
+  <% }); %>
   </div>
 </div>
 
