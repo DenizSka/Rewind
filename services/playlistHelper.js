@@ -35,35 +35,34 @@ module.exports = {
     });
   };
 
-
   getAsyncData(actualDate)
-      .then((chart) => {
-        // adding properties to res.locals
-        let data = chart.songs;
-        let newChart = data.slice(0, 10);
-        console.log(newChart);
+    .then((chart) => {
+      // adding properties to res.locals
+      let data = chart.songs;
+      let newChart = data.slice(0, 10);
+      console.log(newChart);
         // res.send(newChart);
-        res.locals.playlist = newChart;
+      res.locals.playlist = newChart;
         // Got help from developer friend to implement the YouTube info on the url below:
         // https://www.npmjs.com/package/youtube-search
-        const songName = newChart[0].title;
-        const opts = {
-          maxResults: 10,
-          key: process.env.API_KEY,
-        };
-        search(songName, opts, (err, results) => {
-          if (err) return console.log(err);
-          console.log('youtube songs', results[0]);
-          console.log('youtube songs', results);
-          res.locals.firstVideo = results[0];
-          next();
-        });
-      }).catch((err) => {
-        console.log(err);
+      const songName = newChart[0].title;
+      const opts = {
+        maxResults: 10,
+        key: process.env.API_KEY,
+      };
+      search(songName, opts, (err, results) => {
+        if (err) return console.log(err);
+        console.log('youtube songs', results[0]);
+        console.log('youtube songs', results);
+        res.locals.firstVideo = results[0];
+        next();
+      });
+    }).catch((err) => {
+      console.log(err);
         // in case there's an error in the API call, we don't want to just
         // display an error on the page. This helps the app stay functional
-        res.locals.getYourSong = 'Coming Soon!';
-        next(err);
-      });
+      res.locals.getYourSong = 'Coming Soon!';
+      next(err);
+    });
   }
 }
